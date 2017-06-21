@@ -60,7 +60,7 @@ class Main extends PluginBase implements Listener{
                     return true;
                     
                 } else {
-                    $player->sendMessage($this->permMessage);
+                    $player->sendMessage(TextFormat::RED."You don't have permission");
                     return true;
                 }
                 break;
@@ -85,7 +85,7 @@ class Main extends PluginBase implements Listener{
                     return true;
                     
                 } else {
-                    $player->sendMessage($this->permMessage);
+                    $player->sendMessage(TextFormat::RED."You don't have permission");
                     return true;
                 }
                 break;
