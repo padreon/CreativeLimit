@@ -70,10 +70,10 @@ class Main extends PluginBase implements Listener{
                 $player = $this->getServer()->getPlayer($sender->getName());
                 
                 if ($player->hasPermission("limit.survival")){ //perm
-                    if ($player->getGamemode() == 1){
+                    if ($player->getGamemode() == 0){
                         $player->sendMessage(TextFormat::RED."You are already in creative mode!");
                     } else {
-                        $player->setGamemode(1);
+                        $player->setGamemode(0);
                         $player->sendMessage(TextFormat::GREEN."You are now in creative mode!");
 						$player->getInventory()->clearAll();
                     }
