@@ -44,7 +44,7 @@ class Main extends PluginBase implements Listener{
     
 				case "creative":
                 if (!($sender instanceof Player)){
-                    $sender->sendMessage($this->consoleMsg);
+                    $sender->sendMessage(TextFormat::GREEN."Only work in Game!");
                     return true;
                 }
                 $player = $this->getServer()->getPlayer($sender->getName());
@@ -69,7 +69,7 @@ class Main extends PluginBase implements Listener{
 				case "survival":
 				  
 				 if (!($sender instanceof Player)){
-                    $sender->sendMessage($this->consoleMsg);
+                    $sender->sendMessage(TextFormat::GREEN."Only work in Game!");
                     return true;
                 }
                 $player = $this->getServer()->getPlayer($sender->getName());
