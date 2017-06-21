@@ -33,6 +33,11 @@ class Main extends PluginBase implements Listener{
         if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $chest)) $ev->setCancelled();
  
         }
+	public function onInteract(PlayerInteractEvent $ev){
+        $furnace = 61; //Id Furnace
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $furnace)) $ev->setCancelled();
+ 
+        }
 		public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
 			$cmd = strlower($command->getName()):
 			switch($cmd){
