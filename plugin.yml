@@ -1,6 +1,20 @@
 name: CreativeLimit
 main: padreon\Main
-version: 1.0
+version: 2.0
 api: [3.0.0, 3.0.0-ALPHA5]
 author: padreon
 description: Can't open chest in creative mode
+commands:
+    creative:
+        usage: /gms
+        description: Changes gamemode to survival
+    survival:
+        usage: /gmc
+        description: Changes gamemode to creative
+permissions:
+    limit.creative:
+        default: op
+        description: Lets you use /gmc
+    limit.survival:
+        default: op
+        description: Lets you use /gms
