@@ -44,6 +44,21 @@ class Main extends PluginBase implements Listener{
  
         }
 	public function onInteract(PlayerInteractEvent $ev){
+        $beacon = 138; //beacon
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $beacon)) $ev->setCancelled();
+ 
+        }
+	public function onInteract(PlayerInteractEvent $ev){
+        $dropper = 125; //dropper
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $dropper)) $ev->setCancelled();
+ 
+        }
+	public function onInteract(PlayerInteractEvent $ev){
+        $dispenser = 23; //dispenser
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $dispenser)) $ev->setCancelled();
+ 
+        }
+	public function onInteract(PlayerInteractEvent $ev){
         $hopper = 154; //Id Hopper
         if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $hopper)) $ev->setCancelled();
  
@@ -106,10 +121,10 @@ class Main extends PluginBase implements Listener{
                 
                 if ($player->hasPermission("limit.survival")){ //perm
                     if ($player->getGamemode() == 0){
-                        $player->sendMessage(TextFormat::RED."You are already in creative mode!");
+                        $player->sendMessage(TextFormat::RED."You are already in survival mode!");
                     } else {
                         $player->setGamemode(0);
-                        $player->sendMessage(TextFormat::GREEN."You are now in creative mode!");
+                        $player->sendMessage(TextFormat::GREEN."You are now in survival mode!");
 						$player->getInventory()->clearAll();
                     }
                     return true;
