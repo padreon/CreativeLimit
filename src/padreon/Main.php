@@ -34,6 +34,36 @@ class Main extends PluginBase implements Listener{
  
         }
 	public function onInteract(PlayerInteractEvent $ev){
+        $trapc = 146; //Id Trapchest
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $trapc)) $ev->setCancelled();
+ 
+        }
+	public function onInteract(PlayerInteractEvent $ev){
+        $endchest = 130; //EnderChest
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $endchest)) $ev->setCancelled();
+ 
+        }
+	public function onInteract(PlayerInteractEvent $ev){
+        $hopper = 154; //Id Hopper
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $hopper)) $ev->setCancelled();
+ 
+        }
+		public function onInteract(PlayerInteractEvent $ev){
+        $anvil = 145; //Id Anvil
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $anvil)) $ev->setCancelled();
+ 
+        }
+	public function onInteract(PlayerInteractEvent $ev){
+        $brewing = 379; //Id BrewingStand
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $brewing)) $ev->setCancelled();
+ 
+        }
+	public function onInteract(PlayerInteractEvent $ev){
+        $enchant = 116; //Id Enchantment Table
+        if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $enchant)) $ev->setCancelled();
+ 
+        }
+	public function onInteract(PlayerInteractEvent $ev){
         $furnace = 61; //Id Furnace
         if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $furnace)) $ev->setCancelled();
  
