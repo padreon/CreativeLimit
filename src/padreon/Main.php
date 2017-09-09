@@ -4,7 +4,7 @@ namespace padreon;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\event\player\{PlayerDropItemEvent, PlayerInteractEvent};
 use pocketmine\item\ItemBlock;
 use pocketmine\command\PluginCommand;
 use pocketmine\permission\Permission;
@@ -78,6 +78,10 @@ class Main extends PluginBase implements Listener{
         if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $enchant)) $ev->setCancelled();
  
         }
+	public function OnDropItem(PlayerDropItemEvent $event){
+		if($event->getPlayer()->getGamemode() === 1) $event->setCancelled();
+	}
+	
 	public function onInteract(PlayerInteractEvent $ev){
         $furnace = 61; //Id Furnace
         if(($ev->getPlayer()->getGamemode() === 1) && ($ev->getBlock()->getId() === $furnace)) $ev->setCancelled();
