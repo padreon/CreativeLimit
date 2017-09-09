@@ -1,7 +1,7 @@
 name: CreativeLimit
 main: padreon\Main
 version: 2.1
-api: [3.0.0, 3.0.0-ALPHA5]
+api: [3.0.0-ALPHA7]
 author: padreon
 description: Can't open chest in creative mode
 commands:
