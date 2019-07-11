@@ -13,6 +13,7 @@
  */
 namespace padreon\CreativeLimit;
 
+use pocketmine\block\Block;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\Listener;
@@ -33,8 +34,8 @@ class Main extends PluginBase implements Listener{
     public function onInteract(PlayerInteractEvent $event){
         $player = $event->getPlayer();
         $blocks = $event->getBlock()->getId();
-
-        $blacklist = [130, 54, 61, 146, 116, 145, 199, 325];
+        $blacklist = [Block::ENDER_CHEST, Block::CHEST, Block::FURNACE, Block::BURNING_FURNACE, Block::TRAPPED_CHEST, Block::ENCHANTMENT_TABLE, Block::ANVIL, Block::ITEM_FRAME_BLOCK, Block::SHULKER_BOX, Block::UNDYED_SHULKER_BOX];
+        //$blacklist = [130, 54, 61, 146, 116, 145, 199, 325];
         if ($player->isCreative()){
             if (in_array($blocks, $blacklist)){
                 $event->setCancelled();
@@ -43,12 +44,13 @@ class Main extends PluginBase implements Listener{
         }
     }
 
+
     public function onGameModeChange(PlayerGameModeChangeEvent $event){
         $player = $event->getPlayer();
-
         $newGM = $event->getNewGamemode();
         if ($newGM === 0){
             $player->getInventory()->clearAll();
+            $player->getArmorInventory()->clearAll();
             return;
         }
     }
@@ -65,6 +67,7 @@ class Main extends PluginBase implements Listener{
         $player = $event->getPlayer();
         if ($player->isCreative()){
             $player->getInventory()->clearAll();
+            $player->getArmorInventory()->clearAll();
         }
     }
 
