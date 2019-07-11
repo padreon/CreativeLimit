@@ -32,7 +32,8 @@ class Main extends PluginBase implements Listener{
 
     public function onInteract(PlayerInteractEvent $event){
         $player = $event->getPlayer();
-        $blocks = $event->getBlock();
+        $blocks = $event->getBlock()->getId();
+
         $blacklist = [130, 54, 61, 146, 116, 145, 199, 325];
         if ($player->isCreative()){
             if (in_array($blocks, $blacklist)){
@@ -44,6 +45,7 @@ class Main extends PluginBase implements Listener{
 
     public function onGameModeChange(PlayerGameModeChangeEvent $event){
         $player = $event->getPlayer();
+
         $newGM = $event->getNewGamemode();
         if ($newGM === 1){
             $player->getInventory()->clearAll();
