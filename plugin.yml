@@ -1,5 +1,6 @@
 name: CreativeLimit
 main: padreon\CreativeLimit\Main
-version: 3.0.0
+version: 1.1
+api: 3.0.0
 author: padreon
 description: Limited creative for player
