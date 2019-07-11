@@ -47,7 +47,7 @@ class Main extends PluginBase implements Listener{
         $player = $event->getPlayer();
 
         $newGM = $event->getNewGamemode();
-        if ($newGM === 1){
+        if ($newGM === 0){
             $player->getInventory()->clearAll();
             return;
         }
