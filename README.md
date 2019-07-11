@@ -1,6 +1,8 @@
 # CreativeLimit
 Limit creative for player
 
+[![](https://poggit.pmmp.io/shield.state/CreativeLimit)](https://poggit.pmmp.io/p/CreativeLimit)
+
 __Feature on Player on gamemode creative__
 - [x] Player can't open Chest, furnace, and etc
 - [x] Player can't hit/kill another player
